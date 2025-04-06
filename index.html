@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelpHub - Homepage</title>
+</head>
+<body>
+  <!-- Header with logo and title -->
+  <header>
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <img src="logo.png" alt="HelpHub Logo" style="height: 60px;" />
+      <h1 style="text-align: center; flex-grow: 1;">HelpHub</h1>
+    </div>
+    <p style="text-align: center;">Connecting Volunteers with Local Charities</p>
+  </header>
+
+  <!-- Navigation bar -->
+  <nav style="text-align: center; margin: 20px 0;">
+    <ul style="list-style: none; padding: 0; display: inline-block;">
+      <li style="display: inline; margin: 0 20px;"><a href="index.html">Home</a></li>
+      <li style="display: inline; margin: 0 20px;"><a href="charities.html">Charities</a></li>
+      <li style="display: inline; margin: 0 20px;"><a href="charity_profile.html">Profile</a></li>
+      <li style="display: inline; margin: 0 20px;"><a href="#">Events</a></li>
+      <li style="display: inline; margin: 0 20px;"><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Large image section -->
+  <section>
+    <img src="banner.jpg" alt="HelpHub Banner" style="width: 100%; height: auto;" />
+  </section>
+
+  <!-- Main content layout -->
+  <main style="display: flex; margin: 20px;">
+    <!-- Sidebar with user info -->
+    <aside style="width: 25%; padding: 10px;">
+      <img src="profile.jpg" alt="User Profile Picture" style="width: 100px; border-radius: 50%;" />
+      <h3>Welcome, [User Name]</h3>
+    </aside>
+
+    <!-- News feed -->
+    <section style="width: 75%; padding: 10px;">
+      <article>
+        <h4>Volunteer Opportunity: Beach Cleanup</h4>
+        <p>Join us this Saturday for a community beach cleanup event...</p>
+        <button>Like</button>
+        <button>Share</button>
+        <details>
+          <summary>See More</summary>
+          <p>Details about the event, location, what to bring, etc.</p>
+        </details>
+      </article>
+      <hr />
+      <article>
+        <h4>New Charity Spotlight: Food for All</h4>
+        <p>Learn more about how this local group is helping fight hunger...</p>
+        <button>Like</button>
+        <button>Share</button>
+        <details>
+          <summary>See More</summary>
+          <p>Additional information about the organization and how to get involved.</p>
+        </details>
+      </article>
+      <!-- Add more news feed items as needed -->
+    </section>
+  </main>
+
+  <!-- Sponsorship section -->
+  <footer style="text-align: center; margin-top: 40px;">
+    <h3>Our Sponsors</h3>
+    <p>Supported by Local Businesses & Organizations</p>
+  </footer>
+</body>
+</html>
