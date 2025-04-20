@@ -308,4 +308,32 @@ a:focus, button:focus, input:focus {
   .charity-grid {
     grid-template-columns: 1fr;
   }
+  /* Volunteer Form Specific Styling */
+.volunteer-form {
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Success Message Styling */
+.success-message {
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 1rem;
+}
+
+/* JS Hover Class for the Volunteer Button */
+#volunteer-btn.hovered {
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
 }
