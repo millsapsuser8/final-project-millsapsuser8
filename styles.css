@@ -84,3 +84,31 @@ footer {
   text-align: center;
   margin-top: 20px;
 }
+
+/* Charity Grid Cards */
+.charity-box {
+  background: #f9fdf4;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+.charity-box h3 {
+  margin-bottom: .5em;
+}
+.charity-box p {
+  font-size: .9em;
+  margin-bottom: 1em;
+}
+
+/* Loading & Error */
+#loading {
+  text-align: center;
+  font-style: italic;
+  margin: 20px 0;
+}
+#error-message {
+  color: red;
+  text-align: center;
+  margin: 20px 0;
+}
