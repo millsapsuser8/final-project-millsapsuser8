@@ -1,88 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="styles.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
   <title>HelpHub - Homepage</title>
 </head>
 <body>
-  <!-- Header with logo and title -->
+  <!-- Header -->
   <header>
-    <div style="display: flex; align-items: center; justify-content: space-between;">
-      <img src="logo.png" alt="HelpHub Logo" style="height: 60px;" />
-      <h1 style="text-align: center; flex-grow: 1;">HelpHub</h1>
+    <div style="display: flex; align-items: center;">
+      <img src="logo.png" alt="HelpHub Logo" />
+      <h1>HelpHub</h1>
     </div>
-    <p style="text-align: center;">Connecting Volunteers with Local Charities</p>
+    <p>Connecting Volunteers with Local Charities</p>
   </header>
 
-  <!-- Navigation bar -->
-  <nav style="text-align: center; margin: 20px 0;">
-    <ul style="list-style: none; padding: 0; display: inline-block;">
-      <li style="display: inline; margin: 0 20px;"><a href="index.html">Home</a></li>
-      <li style="display: inline; margin: 0 20px;"><a href="charities.html">Charities</a></li>
-      <li style="display: inline; margin: 0 20px;"><a href="charity_profile.html">Profile</a></li>
-      <li style="display: inline; margin: 0 20px;"><a href="#">Events</a></li>
-      <li style="display: inline; margin: 0 20px;"><a href="#">Contact</a></li>
-    </ul>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="charities.html">Charities</a>
+    <a href="charity_profile.html">Profile</a>
+    <a href="events.html">Events</a>
+    <a href="#">Contact</a>
   </nav>
 
-  <!-- Large image section -->
+  <!-- Banner -->
   <section>
-    <img src="banner.jpg" alt="HelpHub Banner" style="width: 100%; height: auto;" />
+    <img src="banner.jpg" alt="HelpHub Banner" style="width: 100%;" />
   </section>
 
-  <!-- Main content layout -->
-  <main style="display: flex; margin: 20px;">
-    <!-- Sidebar with user info -->
-    <aside style="width: 25%; padding: 10px;">
-      <img src="profile.jpg" alt="User Profile Picture" style="width: 100px; border-radius: 50%;" />
+  <!-- Main content -->
+  <main>
+    <aside style="width: 25%;">
+      <img src="profile.jpg" alt="User Profile" style="width: 100px; border-radius: 50%;" />
       <h3>Welcome, [User Name]</h3>
     </aside>
 
-    <!-- News feed -->
-    <section style="width: 75%; padding: 10px;">
-      <!-- First Article -->
-      <article style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;">
+    <section style="width: 70%;">
+      <article class="highlight-box">
         <h4>Volunteer Opportunity: Beach Cleanup</h4>
         <p>Join us this Saturday for a community beach cleanup event...</p>
-        <div style="height: 200px; background-color: #f0f0f0; margin: 10px 0;">
-          <!-- Placeholder for future image -->
-          <p style="text-align:center; padding-top: 80px;">[Image Placeholder]</p>
-        </div>
         <button>Like</button>
         <button>Share</button>
-        <details>
-          <summary>See More</summary>
-          <p>Details about the event, location, what to bring, etc.</p>
-        </details>
+        <details><summary>See More</summary><p>Location, timing, and supplies info.</p></details>
       </article>
 
-      <!-- Second Article -->
-      <article style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;">
+      <article class="highlight-box">
         <h4>New Charity Spotlight: Food for All</h4>
-        <p>Learn more about how this local group is helping fight hunger...</p>
-        <div style="height: 200px; background-color: #f0f0f0; margin: 10px 0;">
-          <!-- Placeholder for future image -->
-          <p style="text-align:center; padding-top: 80px;">[Image Placeholder]</p>
-        </div>
+        <p>Learn more about how this local group is fighting hunger...</p>
         <button>Like</button>
         <button>Share</button>
-        <details>
-          <summary>See More</summary>
-          <p>Additional information about the organization and how to get involved.</p>
-        </details>
+        <details><summary>See More</summary><p>Volunteer signup and event dates.</p></details>
       </article>
     </section>
   </main>
 
-  <!-- Sponsorship section -->
-  <footer style="text-align: center; margin: 40px auto; border: 1px solid #ccc; width: 90%; padding: 20px;">
+  <!-- Footer -->
+  <footer>
     <h3>Our Sponsors</h3>
-    <div style="height: 200px; background-color: #f0f0f0; margin-top: 10px;">
-      <!-- Placeholder for sponsor logos or images -->
-      <p style="padding-top: 80px;">[Sponsor Images Placeholder]</p>
-    </div>
+    <div class="sponsor-placeholder">[Sponsor Logos]</div>
   </footer>
 </body>
 </html>
