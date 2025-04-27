@@ -8,8 +8,8 @@
 </head>
 <body>
 
-  <nav>
-    <a href="index.html">← Back to Home</a>
+  <nav style="background-color: #4CAF50; padding: 10px; border-top: 4px solid #ADD8E6;">
+    <a href="index.html" style="color: white; font-weight: bold; text-decoration: none;">← Back to Home</a>
   </nav>
 
   <header>
@@ -54,6 +54,23 @@
       <button class="volunteer-btn">Volunteer Now</button>
       <div class="form-container"></div>
     </section>
+
+    <!-- Dropdown + Charity Results Section -->
+    <section style="text-align: center; margin: 30px 0;">
+      <label for="cause-select" style="font-weight: bold; margin-right: 10px;">Choose a Cause:</label>
+      <select id="cause-select" style="padding: 8px 12px; border-radius: 5px;">
+        <option value="education">Education</option>
+        <option value="health">Health</option>
+        <option value="environment">Environment</option>
+        <option value="arts">Arts</option>
+        <option value="community">Community</option>
+      </select>
+    </section>
+
+    <div id="loading" style="text-align: center;">Loading charities...</div>
+    <div id="error-message" class="error-message"></div>
+    <div id="charity-container" class="charity-grid"></div>
+
   </main>
 
   <footer>
