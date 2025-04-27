@@ -4,13 +4,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorDiv = document.getElementById("error-message");
   const causeSelect = document.getElementById("cause-select");
 
-  async function loadNews(query) {
+  // Mapping causes to smarter search keywords
+  const causeKeywords = {
+    education: "education volunteering",
+    health: "healthcare volunteering",
+    environment: "environment cleanup",
+    arts: "arts community service",
+    community: "community volunteering",
+  };
+
+  async function loadNews(searchTerm) {
     container.innerHTML = "";
     errorDiv.textContent = "";
     loading.style.display = "block";
 
     try {
-      const response = await fetch(`https://newsdata.io/api/1/latest?apikey=pub_83451d77423451431f5da903262172e953124&q=${encodeURIComponent(query)}&language=en&country=us`);
+      const response = await fetch(`https://newsdata.io/api/1/latest?apikey=pub_83451d77423451431f5da903262172e953124&q=${encodeURIComponent(searchTerm)}&language=en&country=us`);
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
       const data = await response.json();
@@ -40,13 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // First load with "volunteer"
-  loadNews('volunteer');
+  // Load "volunteering" news first when the page loads
+  loadNews('volunteering');
 
-  // Change news based on dropdown
+  // Update news based on dropdown selection
   causeSelect.addEventListener("change", (e) => {
     const selectedCause = e.target.value;
-    loadNews(selectedCause);
+    const keyword = causeKeywords[selectedCause] || "volunteering";
+    loadNews(keyword);
   });
 });
 
