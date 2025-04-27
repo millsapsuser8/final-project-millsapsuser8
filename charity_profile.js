@@ -2,14 +2,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("charity-container");
   const loading = document.getElementById("loading");
   const errorDiv = document.getElementById("error-message");
+  const causeSelect = document.getElementById("cause-select");
 
-  async function loadCharities() {
+  async function loadCharities(causeCategory) {
+    container.innerHTML = "";      // clear old charities
+    errorDiv.textContent = "";     // clear old errors
+    loading.style.display = "block"; // show loading text
+
     try {
-      const response = await fetch("https://api.every.org/nonprofit/animal?limit=9");
+      const response = await fetch(`https://api.every.org/nonprofit/${causeCategory}?limit=9`);
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
       const data = await response.json();
-      loading.remove();
+      loading.style.display = "none";
 
       data.nonprofits.forEach(charity => {
         const card = document.createElement("div");
@@ -25,15 +30,21 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
     } catch (error) {
-      loading.remove();
+      loading.style.display = "none";
       errorDiv.textContent = "Sorry — couldn't load charities. Please try again later.";
       console.error("Fetch error:", error);
     }
   }
 
-  loadCharities();
-});
+  // First load default (education)
+  loadCharities('education');
 
+  // Change cause when user picks a different dropdown option
+  causeSelect.addEventListener("change", (e) => {
+    const selectedCause = e.target.value;
+    loadCharities(selectedCause);
+  });
+});
 
 
 
