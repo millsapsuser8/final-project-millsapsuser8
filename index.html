@@ -9,7 +9,7 @@
 <body>
   <!-- Header -->
   <header>
-    <div style="display: flex; align-items: center;">
+    <div class="header-content">
       <img src="logo.png" alt="HelpHub Logo" />
       <h1>HelpHub</h1>
     </div>
@@ -18,32 +18,37 @@
 
   <!-- Navigation -->
   <nav>
-    <a href="index.html">Home</a>
-    <a href="charities.html">Charities</a>
-    <a href="charity_profile.html">Profile</a>
-    <a href="events.html">Events</a>
-    <a href="#">Contact</a>
+    <ul class="nav-list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="charities.html">Charities</a></li>
+      <li><a href="charity_profile.html">Profile</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
   </nav>
 
   <!-- Banner -->
-  <section>
-    <img src="banner.jpg" alt="HelpHub Banner" style="width: 100%;" />
+  <section class="banner">
+    <img src="banner.jpg" alt="HelpHub Banner" />
   </section>
 
   <!-- Main content -->
-  <main>
-    <aside style="width: 25%;">
-      <img src="profile.jpg" alt="User Profile" style="width: 100px; border-radius: 50%;" />
+  <main class="home-content">
+    <aside class="sidebar">
+      <img src="profile.jpg" alt="User Profile" class="sidebar-avatar" />
       <h3>Welcome, [User Name]</h3>
     </aside>
 
-    <section style="width: 70%;">
+    <section class="highlights">
       <article class="highlight-box">
         <h4>Volunteer Opportunity: Beach Cleanup</h4>
         <p>Join us this Saturday for a community beach cleanup event...</p>
         <button>Like</button>
         <button>Share</button>
-        <details><summary>See More</summary><p>Location, timing, and supplies info.</p></details>
+        <details>
+          <summary>See More</summary>
+          <p>Location, timing, and supplies info.</p>
+        </details>
       </article>
 
       <article class="highlight-box">
@@ -51,7 +56,10 @@
         <p>Learn more about how this local group is fighting hunger...</p>
         <button>Like</button>
         <button>Share</button>
-        <details><summary>See More</summary><p>Volunteer signup and event dates.</p></details>
+        <details>
+          <summary>See More</summary>
+          <p>Volunteer signup and event dates.</p>
+        </details>
       </article>
     </section>
   </main>
