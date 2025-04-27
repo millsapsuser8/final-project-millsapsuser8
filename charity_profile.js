@@ -1,45 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const container   = document.getElementById("charity-container");
-  const loading     = document.getElementById("loading");
-  const errorDiv    = document.getElementById("error-message");
+  const container = document.getElementById("charity-container");
+  const loading = document.getElementById("loading");
+  const errorDiv = document.getElementById("error-message");
 
-  async function loadCharities() {
+  async function loadOpportunities() {
     try {
-      const res = await fetch(
-        "https://api.data.charitynavigator.org/v2/Organizations" +
-        "?app_id=1882" +
-        "&app_key=YOUR_APP_KEY" +
-        "&rated=true" +
-        "&sort=RATING:DESC" +
-        "&state=CA"               // you can drop or change the `state` filter
-      );
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const list = await res.json();
-      loading.remove();          // hide “Loading…” once we have data
+      const response = await fetch("https://api.volunteerconnector.org/public/opportunity/search?limit=9");
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
-      // take first 9 charities
-      list.slice(0, 9).forEach(c => {
+      const data = await response.json();
+      loading.remove(); // Remove the "Loading..." message
+
+      data.opportunities.forEach(opportunity => {
         const card = document.createElement("div");
         card.className = "charity-box";
         card.innerHTML = `
-          <h3>${c.charityName}</h3>
-          <p>${c.mission
-            ? c.mission.substring(0, 100) + "…" 
-            : "No description available."}</p>
-          <a href="${c.websiteURL}" target="_blank">
-            <button>Visit Website</button>
+          <h3>${opportunity.organizationName || "Unnamed Organization"}</h3>
+          <p>${opportunity.title || "Volunteer Opportunity"}</p>
+          <a href="${opportunity.url}" target="_blank">
+            <button>View Details</button>
           </a>
         `;
         container.appendChild(card);
       });
-    } catch (err) {
+
+    } catch (error) {
       loading.remove();
-      errorDiv.textContent = "Sorry—couldn't load charities. Please try again later.";
-      console.error("Fetch error:", err);
+      errorDiv.textContent = "Sorry — couldn't load opportunities. Please try again later.";
+      console.error("Fetch error:", error);
     }
   }
 
-  loadCharities();
+  loadOpportunities();
 });
 
 
