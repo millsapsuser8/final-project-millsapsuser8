@@ -204,3 +204,50 @@ footer {
     margin: 0 auto 20px;
   }
 }
+
+#charity-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 2 per row */
+  gap: 20px;
+  padding: 20px;
+}
+
+.charity-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.2s;
+}
+
+.charity-box:hover {
+  transform: scale(1.02);
+}
+
+.charity-box h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.charity-box p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.charity-box button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.charity-box button:hover {
+  background-color: #45a049;
+}
+
+
