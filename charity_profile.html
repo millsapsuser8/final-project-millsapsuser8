@@ -15,6 +15,18 @@
   <header>
     <img src="logo.png" alt="HelpHub Logo" />
     <h1>Charity Profile Page</h1>
+    <!-- Dropdown + Charity Results Section -->
+    <section style="text-align: center; margin: 30px 0;">
+      <label for="cause-select" style="font-weight: bold; margin-right: 10px;">Choose a Cause:</label>
+      <select id="cause-select" style="padding: 8px 12px; border-radius: 5px;">
+        <option value="education">Education</option>
+        <option value="health">Health</option>
+        <option value="environment">Environment</option>
+        <option value="arts">Arts</option>
+        <option value="community">Community</option>
+      </select>
+    </section>
+    
   </header>
 
   <main>
@@ -55,17 +67,7 @@
       <div class="form-container"></div>
     </section>
 
-    <!-- Dropdown + Charity Results Section -->
-    <section style="text-align: center; margin: 30px 0;">
-      <label for="cause-select" style="font-weight: bold; margin-right: 10px;">Choose a Cause:</label>
-      <select id="cause-select" style="padding: 8px 12px; border-radius: 5px;">
-        <option value="education">Education</option>
-        <option value="health">Health</option>
-        <option value="environment">Environment</option>
-        <option value="arts">Arts</option>
-        <option value="community">Community</option>
-      </select>
-    </section>
+
 
     <div id="loading" style="text-align: center;">Loading charities...</div>
     <div id="error-message" class="error-message"></div>
