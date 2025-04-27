@@ -2,6 +2,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const volunteerBtn = document.getElementById("volunteer-btn");
   const formContainer = document.getElementById("form-container");
 
+  volunteerBtn.addEventListener("click", () => {
+    formContainer.innerHTML = `
+      <form class="volunteer-form">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="email" required />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    `;    });
+
+    formContainer.querySelector("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = e.target.name.value;
+      formContainer.innerHTML = `<p class="success-message">Thanks for volunteering, ${name}!</p>`;
+
+
   const createInput = (type, name, labelText) => {
     const label = document.createElement("label");
     label.textContent = labelText;
