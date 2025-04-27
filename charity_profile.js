@@ -3,22 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const loading = document.getElementById("loading");
   const errorDiv = document.getElementById("error-message");
 
-  async function loadOpportunities() {
+  async function loadCharities() {
     try {
-      const response = await fetch("https://api.volunteerconnector.org/public/opportunity/search?limit=9");
+      const response = await fetch("https://api.every.org/nonprofit/animal?limit=9");
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
       const data = await response.json();
-      loading.remove(); // Remove the "Loading..." message
+      loading.remove();
 
-      data.opportunities.forEach(opportunity => {
+      data.nonprofits.forEach(charity => {
         const card = document.createElement("div");
         card.className = "charity-box";
         card.innerHTML = `
-          <h3>${opportunity.organizationName || "Unnamed Organization"}</h3>
-          <p>${opportunity.title || "Volunteer Opportunity"}</p>
-          <a href="${opportunity.url}" target="_blank">
-            <button>View Details</button>
+          <h3>${charity.name}</h3>
+          <p>${charity.description ? charity.description.substring(0, 100) + "..." : "No description available."}</p>
+          <a href="${charity.profileUrl}" target="_blank">
+            <button>View Profile</button>
           </a>
         `;
         container.appendChild(card);
@@ -26,12 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } catch (error) {
       loading.remove();
-      errorDiv.textContent = "Sorry — couldn't load opportunities. Please try again later.";
+      errorDiv.textContent = "Sorry — couldn't load charities. Please try again later.";
       console.error("Fetch error:", error);
     }
   }
 
-  loadOpportunities();
+  loadCharities();
 });
 
 
