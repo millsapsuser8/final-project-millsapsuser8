@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const res = await fetch(
         "https://api.data.charitynavigator.org/v2/Organizations" +
-        "?app_id=YOUR_APP_ID" +
+        "?app_id=1882" +
         "&app_key=YOUR_APP_KEY" +
         "&rated=true" +
         "&sort=RATING:DESC" +
