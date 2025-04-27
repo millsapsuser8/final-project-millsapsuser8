@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="styles.css" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Charities - HelpHub</title>
+  <title>Explore Charities - HelpHub</title>
 </head>
 <body>
   
@@ -16,7 +16,11 @@
   <header style="border: 1px solid #ccc; padding: 20px; text-align: center; margin: 20px;">
     <h1>Charities Profile</h1>
   </header>
-
+  <main>
+    <div id="loading">Loading charities…</div>
+    <div id="error-message" class="error-message"></div>
+    <div id="charity-container" class="charity-grid"></div>
+  </main>
   <!-- Main Charity Sponsor -->
   <section style="display: flex; border: 1px solid #ccc; margin: 20px; padding: 20px;">
     <!-- Left: Description and buttons -->
