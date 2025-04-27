@@ -1,4 +1,52 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const container   = document.getElementById("charity-container");
+  const loading     = document.getElementById("loading");
+  const errorDiv    = document.getElementById("error-message");
+
+  async function loadCharities() {
+    try {
+      const res = await fetch(
+        "https://api.data.charitynavigator.org/v2/Organizations" +
+        "?app_id=YOUR_APP_ID" +
+        "&app_key=YOUR_APP_KEY" +
+        "&rated=true" +
+        "&sort=RATING:DESC" +
+        "&state=CA"               // you can drop or change the `state` filter
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const list = await res.json();
+      loading.remove();          // hide “Loading…” once we have data
+
+      // take first 9 charities
+      list.slice(0, 9).forEach(c => {
+        const card = document.createElement("div");
+        card.className = "charity-box";
+        card.innerHTML = `
+          <h3>${c.charityName}</h3>
+          <p>${c.mission
+            ? c.mission.substring(0, 100) + "…" 
+            : "No description available."}</p>
+          <a href="${c.websiteURL}" target="_blank">
+            <button>Visit Website</button>
+          </a>
+        `;
+        container.appendChild(card);
+      });
+    } catch (err) {
+      loading.remove();
+      errorDiv.textContent = "Sorry—couldn't load charities. Please try again later.";
+      console.error("Fetch error:", err);
+    }
+  }
+
+  loadCharities();
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
   // Helper to build label+input groups
   const createInput = (type, name, labelText) => {
     const label = document.createElement("label");
